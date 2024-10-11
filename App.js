@@ -1,8 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
+import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image } from 'react-native';
-import User from './src/screens/UserDetail';
+import FriendDetail from './src/screens/UserDetail';
 import Home from './src/screens/HomeScreen';
 import List from './src/screens/UserList';
 
@@ -16,6 +17,7 @@ export default function App() {
         
         <Stack.Screen name="Tela inicial" component={Home}/>
         <Stack.Screen name="Lista amigos" component={List}/>
+        <Stack.Screen name='Detalhes do amigo' component={FriendDetail}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

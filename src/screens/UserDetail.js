@@ -1,12 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
+import { useRoute } from '@react-navigation/native';
+
 import { StyleSheet, Text, View, Image } from 'react-native';
 
-export default function User() {
+export default function FriendDetail() {
+const route = useRoute();
+const {friend} = route.params;
+
   return (
     <View style={styles.container}>
-      <Text style={styles.name}>Yuri Albuquerque Silva</Text>
-      <Image style={styles.photo} source={require('../../img/IMG_20240420_111806.jpg')} />
-      <StatusBar style="auto" />
+      <Text style={styles.title}>Perfil de {friend.name}</Text>
+      {/* <Image source={{uri: friend.photo1}} style={styles.profilePhoto} /> */}
+      <Text style={styles.city}>Cidade: {friend.city}</Text>
+      <Text style={styles.state}>UF: {friend.state}</Text>
+      <Text style={styles.maritalStatus}>Estado Civil {friend.maritalStatus}</Text>
+      <Text style={styles.aboutMe}>Sobre mim: {friend.aboutMe}</Text>
+      <Text style={styles.morePhotos}>Mais Fotos</Text>
+      {/* <Image source={{uri: friend.photo2}} style={styles.profilePhoto} />
+      <Image source={{uri: friend.photo3}} style={styles.profilePhoto} /> */}
+      
     </View>
   );
 }
