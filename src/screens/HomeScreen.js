@@ -1,23 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, Button, TouchableOpacity, SafeAreaView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
 export default function Home(){
     const navigation = useNavigation();
     return (
+        <SafeAreaView style={styles.safeContainer}>
         <View style={styles.container}>
             <Text style={styles.name}>Yuri Albuquerque Silva</Text>
             <Image style={styles.photo} source={require('../../img/IMG_20240420_111806.jpg')} />
             <TouchableOpacity style={styles.friends}>
                 <Button style={styles.button}  title="Lista de amigos" onPress={() => navigation.navigate('Lista amigos')}></Button>
             </TouchableOpacity>
-            <StatusBar style="auto" />
         </View>
+        </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
+    safeContainer: {
+    flex: 1,
+    },
+
     container: {
         display: 'flex',
         justifyContent: 'center',
