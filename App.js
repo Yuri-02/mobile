@@ -19,6 +19,7 @@ export default function App() {
         <Stack.Screen name="Lista amigos" component={List}/>
         <Stack.Screen name='Detalhes do amigo' component={FriendDetail}/>
       </Stack.Navigator>
+      <StatusBar style="auto" />
     </NavigationContainer>
   );
 }

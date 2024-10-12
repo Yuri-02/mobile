@@ -5,7 +5,7 @@ export default function CardList({friend}){
     const navigation = useNavigation();
 
     return (
-        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('FriendDetail', {friend})}>
+        <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('Detalhes do amigo', {friend})}>
             <Image source={{uri: friend.photo1}} style={styles.profilePhoto} />
             <Text style={styles.name}>{friend.name}</Text>
         </TouchableOpacity>
